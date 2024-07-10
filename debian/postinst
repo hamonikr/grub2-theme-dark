@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+    if which update-grub2 > /dev/null 2>&1
+    then
+        LC_ALL=C update-grub2 || echo "Could not update grub, skipping."
+    fi
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+    ;;
+esac
+

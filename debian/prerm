@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    remove)
+        # Always remove this file when removing the package
+        # even if we're not purged. This file would break update-grub2
+        # if the package wasn't installed.
+        rm -f /etc/default/grub.d/90_hamonikr.cfg || echo "Could not remove 90_hamonikr.cfg, skipping."
+        if which update-grub2 > /dev/null 2>&1
+        then
+            LC_ALL=C update-grub2 || echo "Could not update grub, skipping."
+        fi
+        ;;
+esac
+
+exit 0

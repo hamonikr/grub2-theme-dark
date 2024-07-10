@@ -1,0 +1,2 @@
+etc/default/grub.d/90_hamonikr.cfg
+usr/share/grub/themes/hamonikr-dark
