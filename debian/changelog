@@ -1,3 +1,9 @@
+grub2-theme-dark (1.0.1) unstable; urgency=medium
+
+  * Change menu style
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 29 Jul 2024 11:02:52 +0900
+
 grub2-theme-dark (1.0.0) stable; urgency=medium
 
   * Release for HamoniKR paektu

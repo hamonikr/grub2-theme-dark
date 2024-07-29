@@ -31,7 +31,7 @@ update_grub_config() {
 
 # 배포판에 따라 GRUB 업데이트
 case $OS in
-    arch|manjaro)
+    arch|manjaro|opensuse-leap)
         update_grub_config
         sudo grub-mkconfig -o /boot/grub/grub.cfg
         echo "Arch Linux/Manjaro에서 HamoniKR 테마가 성공적으로 설치되었습니다."

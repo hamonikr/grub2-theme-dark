@@ -13,8 +13,8 @@ terminal-border: "0"
     menu_pixmap_style = "boot_menu_*.png"
     left = 10%
     width = 45%
-    top = 30%
-    height = 40%
+    top = 20%
+    height = 55%
     item_font = "Monaco Regular 18"
     item_color = "#6b6b6b"
     selected_item_font = "Monaco Regular 18"
