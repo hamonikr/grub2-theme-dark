@@ -8,6 +8,11 @@ case "$1" in
     then
         LC_ALL=C update-grub2 || echo "Could not update grub, skipping."
     fi
+
+    if [ -f /etc/hamonikr/adjustments/10-adjust-grub-title.execute ]
+    then
+        /etc/hamonikr/adjustments/10-adjust-grub-title.execute
+    fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
