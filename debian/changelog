@@ -1,3 +1,10 @@
+grub2-theme-dark (2.0.1) paektu; urgency=medium
+
+  [Kevin Kim]
+  * Replace GRUB_GFXMODE=auto if GRUB_GFXMODE value exist
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 13 Aug 2024 23:35:05 +0900
+
 grub2-theme-dark (2.0.0) paektu; urgency=medium
 
   [Kevin Kim]

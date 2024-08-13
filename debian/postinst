@@ -9,6 +9,10 @@ case "$1" in
         LC_ALL=C update-grub2 || echo "Could not update grub, skipping."
     fi
 
+    if [ -f /etc/default/grub ]; then
+        sed -i "s/GRUB_GFXMODE=.*/GRUB_GFXMODE=auto/g" /etc/default/grub 
+    fi
+
     if [ -f /etc/hamonikr/adjustments/10-adjust-grub-title.execute ]
     then
         /etc/hamonikr/adjustments/10-adjust-grub-title.execute
