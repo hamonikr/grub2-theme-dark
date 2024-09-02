@@ -1,3 +1,10 @@
+grub2-theme-dark (2.0.2) paektu; urgency=medium
+
+  [Kevin Kim]
+  * Increase menu font
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 02 Sep 2024 10:52:42 +0900
+
 grub2-theme-dark (2.0.1) paektu; urgency=medium
 
   [Kevin Kim]
