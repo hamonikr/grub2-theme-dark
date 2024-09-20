@@ -1,3 +1,11 @@
+grub2-theme-dark (2.0.3) paektu; urgency=medium
+
+  [Kevin Kim]
+  * Add resolution support
+  * Add background image
+  
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 20 Sep 2024 19:51:21 +0900
+
 grub2-theme-dark (2.0.2) paektu; urgency=medium
 
   [Kevin Kim]

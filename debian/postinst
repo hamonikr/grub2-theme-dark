@@ -2,6 +2,14 @@
 
 set -e
 
+get_resolution() {
+    if [ -n "$DISPLAY" ]; then
+        xrandr | grep '*' | awk '{print $1}'
+    else
+        echo "1920x1080"
+    fi
+}
+
 case "$1" in
     configure)
     if which update-grub2 > /dev/null 2>&1
@@ -17,14 +25,47 @@ case "$1" in
     then
         /etc/hamonikr/adjustments/10-adjust-grub-title.execute
     fi
-    ;;
 
+    # 해상도 감지 및 배경 이미지 설정
+    RESOLUTION=$(get_resolution)
+    if [ -n "$RESOLUTION" ]; then
+        case "$RESOLUTION" in
+            "2560x1440")
+                BACKGROUND_IMAGE="background_2560x1440.png"
+                ;;
+            "3840x2160")
+                BACKGROUND_IMAGE="background_3840x2160.png"
+                ;;
+            "1920x1080")
+                BACKGROUND_IMAGE="background_1920x1080.png"
+                ;;                
+            "1366x768")
+                BACKGROUND_IMAGE="background_1366x768.png"
+                ;;
+            "1024x768")
+                BACKGROUND_IMAGE="background_1024x768.png"
+                ;;                
+            "2560x1600")
+                BACKGROUND_IMAGE="background_2560x1600.png"
+                ;;
+            "3440x1440")
+                BACKGROUND_IMAGE="background_3440x1440.png"
+                ;;
+            # 추가 해상도 케이스
+            *)
+                BACKGROUND_IMAGE="background_1920x1080.png"
+                ;;
+        esac
+        sed -i "s|^desktop-image:.*|desktop-image: \"$BACKGROUND_IMAGE\"|" /usr/share/grub/themes/hamonikr-dark/theme.txt
+    fi
+    ;;
+    
     abort-upgrade|abort-remove|abort-deconfigure)
-
     ;;
-
+    
     *)
         echo "postinst called with unknown argument \`$1'" >&2
     ;;
 esac
+
 

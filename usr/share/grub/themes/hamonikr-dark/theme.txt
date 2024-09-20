@@ -1,6 +1,6 @@
 # Main options
 title-text: ""
-desktop-image: "background.png"
+desktop-image: "background_1920x1080.png"
 desktop-color: "#000000"
 # D2Coding Regular 20 or D2Coding Regular 32
 terminal-font: "D2Coding Regular 20"

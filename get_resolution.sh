@@ -21,10 +21,15 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## The location of the file with the resolutions
-RESOLUTIONS="./resolutions.txt" 
+# RESOLUTIONS="./resolutions.txt" 
+
+# Debugging output
+echo "Debug: Starting resolution detection"
 
 # xrandr -q | grep -Po 'current\s*\K\d+\s*x\s*\d+' | sed 's/ *x */ /' | 
 xrandr --current | grep "*" | head -n 1 | sed 's/ *x */ /' | awk -F" " '{print $1 " " $2}' |
 while read x y; do 
-    grep "$x" "$RESOLUTIONS" | grep "$y" | awk -F" " '{print $2}'; 
+    # echo "Debug: Detected resolution ${x}x${y}"
+    # grep "$x" "$RESOLUTIONS" | grep "$y" | awk -F" " '{print $2}'; 
+    echo "Detected resolution: ${x}x${y}"
 done 
