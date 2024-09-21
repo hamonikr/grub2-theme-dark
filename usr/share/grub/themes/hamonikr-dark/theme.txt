@@ -13,7 +13,7 @@ terminal-border: "0"
 
 # Boot menu
 + boot_menu {
-  left = 15%
+  left = 25%
   top = 40%
   width = 55%
   height = 50%
@@ -36,7 +36,7 @@ terminal-border: "0"
 # Countdown label
 # You can change the name of default starting OS here
 + label {
-  left = 15%
+  left = 25%
   top = 31%
   align = "center"
   id = "__timeout__"
